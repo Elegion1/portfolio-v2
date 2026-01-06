@@ -10,7 +10,7 @@ export function Footer() {
           </a>
           <SocialLinks className="gap-4" size={20} />
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © 2025 • Giovanni Sugamiele
+            © 2025 Giovanni Sugamiele
           </p>
         </div>
       </div>
