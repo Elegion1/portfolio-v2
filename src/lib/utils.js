@@ -1,5 +1,6 @@
 // Utility functions for the portfolio
-
+export const startingYear = 2024;
+export const currentYear = new Date().getFullYear();
 export const socialLinks = [
   {
     name: 'GitHub',
@@ -218,7 +219,7 @@ export const stats = [
         <path d="m14.5 4-5 16"></path>
       </svg>
     ),
-    value: '2+ anni',
+    value: `${currentYear - startingYear}+ anni`,
     label: 'di esperienza nello sviluppo web professionale'
   },
   {

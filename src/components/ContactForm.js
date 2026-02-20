@@ -7,6 +7,7 @@ export function ContactForm() {
     name: "",
     email: "",
     message: "",
+    extra: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -31,11 +32,11 @@ export function ContactForm() {
       });
 
       const data = await res.json();
-      
+
       if (data.success) {
         console.log("Email inviata!");
         alert("Messaggio inviato con successo!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", extra: "" });
       } else {
         console.error("Errore:", data.error);
         alert("Si è verificato un errore durante l'invio del messaggio.");
@@ -100,6 +101,24 @@ export function ContactForm() {
             className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground placeholder:text-muted-foreground resize-none"
             placeholder="Descrivi il tuo progetto..."
           ></textarea>
+        </div>
+        <div id="extra-field">
+          <label
+            htmlFor="extra"
+            className="block text-sm font-mono font-medium mb-2"
+          >
+            Extra
+          </label>
+          <input
+            type="text"
+            id="extra"
+            value={formData.extra}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+            className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
+            placeholder="Inserisci un messaggio extra"
+          />
         </div>
         <button
           disabled={loading}
